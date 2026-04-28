@@ -199,3 +199,17 @@ details.panel > .note {
     padding: 6px 10px;
     border-radius: 4px;
 }
+
+.site-footer {
+    margin-top: 28px;
+    padding: 10px 8px 18px;
+    text-align: center;
+    border-top: 1px solid #1c1c1c;
+}
+
+.footerCredits {
+    margin: 0;
+    font-size: 0.8rem;
+    color: #555;
+    line-height: 1.35;
+}
