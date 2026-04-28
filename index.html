@@ -4,147 +4,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>501 Master Out Helper</title>
-<style>
-body {
-    font-family: Arial, sans-serif;
-    background: #111;
-    color: #fff;
-    padding: 20px;
-}
-h1 {
-    text-align: center;
-}
-input, button {
-    font-size: 1.2em;
-    padding: 10px;
-    margin-top: 10px;
-    width: 100%;
-}
-button {
-    background: #e53935;
-    color: white;
-    border: none;
-}
-.result {
-    margin-top: 20px;
-    background: #222;
-    padding: 15px;
-    border-radius: 8px;
-}
-.good {
-    color: #4caf50;
-}
-.bad {
-    color: #ff9800;
-}
-</style>
+<link rel="stylesheet" href="./styles.css">
 </head>
 <body>
 
 <h1>🎯 501 Master Out</h1>
 
 <input type="number" id="points" placeholder="Puntos restantes (ej. 68)" min="2" max="501">
-<button onclick="calculate()">Calcular</button>
+<button id="calculateBtn">Calcular</button>
 
 <div class="result" id="result"></div>
 
-<script>
-function generateThrows() {
-    let throws = [];
-
-    for (let i = 1; i <= 20; i++) {
-        throws.push({name: "S" + i, value: i, finish: false});
-        throws.push({name: "D" + i, value: i * 2, finish: true});
-        throws.push({name: "T" + i, value: i * 3, finish: true});
-    }
-
-    throws.push({name: "Bull", value: 50, finish: true});
-
-    return throws;
-}
-
-const throws = generateThrows();
-
-function calculate() {
-    const points = parseInt(document.getElementById("points").value);
-    const resultDiv = document.getElementById("result");
-    resultDiv.innerHTML = "";
-
-    if (points < 2) {
-        resultDiv.innerHTML = "Introduce un valor válido.";
-        return;
-    }
-
-    let checkout = findCheckout(points);
-
-    if (checkout) {
-        resultDiv.innerHTML =
-            "<span class='good'>✅ Mejor cierre:</span><br>" +
-            checkout.join(" → ");
-    } else {
-        let advice = bestNonCheckout(points);
-        resultDiv.innerHTML =
-            "<span class='bad'>❌ No hay cierre.</span><br>" +
-            "Mejor opción: <b>" + advice + "</b>";
-    }
-}
-
-function findCheckout(points) {
-    // 1 dardo
-    for (let t of throws) {
-        if (t.finish && t.value === points) {
-            return [t.name];
-        }
-    }
-
-    // 2 dardos
-    for (let last of throws.filter(t => t.finish)) {
-        let rem = points - last.value;
-        if (rem > 0) {
-            for (let first of throws) {
-                if (first.value === rem) {
-                    return [first.name, last.name];
-                }
-            }
-        }
-    }
-
-    // 3 dardos
-    for (let last of throws.filter(t => t.finish)) {
-        let rem2 = points - last.value;
-        if (rem2 > 0) {
-            for (let second of throws) {
-                let rem1 = rem2 - second.value;
-                if (rem1 > 0) {
-                    for (let first of throws) {
-                        if (first.value === rem1) {
-                            return [first.name, second.name, last.name];
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    return null;
-}
-
-function bestNonCheckout(points) {
-    if (points > 60) return "T20";
-
-    let preferredFinishes = [40, 32, 24, 16, 50, 36, 30];
-
-    for (let t of throws) {
-        let rem = points - t.value;
-        if (preferredFinishes.includes(rem)) {
-            return t.name + " (dejar " + rem + ")";
-        }
-    }
-
-    if (points > 19) return "T19";
-    return "S" + (points - 2);
-}
-</script>
+<script src="./app.js"></script>
 
 </body>
 </html>
