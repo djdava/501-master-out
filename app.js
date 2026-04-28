@@ -20,19 +20,22 @@ for (let score = 180; score >= 32; score -= 1) {
 }
 const trainingPlans = {
     principiante: [
-        "Objetivo: aprender a dejar dobles comodos (40, 32, 24, 16).",
-        "Rutina: 10 rondas empezando en 61-80 y buscando dejar doble en 2 dardos.",
-        "Clave: prioriza control de single 20 y single 16 antes que forzar triples."
+        "Objetivo: dominar dobles comodos (40, 32, 24, 16) y aprovechar la diana (Bull = 50) como zona segura.",
+        "Rutina: 10 rondas empezando en 61-100. Busca cerrar en 2 o 3 dardos sin forzar triples.",
+        "Clave 1: Bull es vuestra zona habitual; usalo como dardo de scoring o cierre cuando ayude (ej. 100 = Bull + Bull).",
+        "Clave 2: prioriza S20/S19 para preparar doble. Solo busca triple si la app te lo recomienda explicitamente."
     ],
     intermedio: [
-        "Objetivo: convertir cierres de 2 y 3 dardos de forma consistente.",
-        "Rutina: bloques de 20 intentos en 81-100 y 101-130.",
-        "Clave: alterna rutas por 20 y 19 para tener plan B cuando fallas el triple."
+        "Objetivo: convertir cierres de 2 y 3 dardos mezclando bull y maximo 1 triple por ronda.",
+        "Rutina: bloques de 20 intentos en 81-140. Apunta primero a la diana cuando la resta lo permite (ej. 110 = Bull + D5 + Bull).",
+        "Clave 1: si fallas el triple (cae single), no improvises: la app te recoloca con la nueva resta. Esa es la idea de plan B.",
+        "Clave 2: alterna rutas por T20/T19 + bull para entrenar mas de un camino al cierre."
     ],
     avanzado: [
-        "Objetivo: optimizar decisiones de scoring y cierre en una sola ronda.",
-        "Rutina: series de presion en 121-170 con limite de tiempo por turno.",
-        "Clave: simula partido real y registra porcentaje de checkout por rango."
+        "Objetivo: maxima eficiencia. Cierra en 1-2 dardos siempre que sea posible y gestiona los bogeys (159, 162, 163, 165, 166, 168, 169).",
+        "Rutina: series de presion en 121-170 con limite de tiempo por turno y registro de % de checkout.",
+        "Clave 1: la app puede pedirte 2-3 triples (ej. 132 = T20+T20+T4 o 170 = T20+T20+Bull): asume el plan completo.",
+        "Clave 2: ante un bogey, no insistas en cerrar: el objetivo es dejarte 40/32/24/16 o 50 para el siguiente turno."
     ]
 };
 

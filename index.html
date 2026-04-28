@@ -58,21 +58,9 @@
 <section class="panel">
     <h2>Consulta rapida</h2>
     <p class="note">Consulta puntual de cierre para una resta concreta.</p>
-<input type="number" id="points" placeholder="Puntos restantes (ej. 68)" min="2" max="501">
-<button id="calculateBtn">Calcular</button>
-
-<div class="result" id="result"></div>
-</section>
-
-<section class="panel">
-    <h2>Guia de entrenamiento</h2>
-    <div id="trainingGuide" class="guide"></div>
-</section>
-
-<section class="panel">
-    <h2>Cierres recomendados (Master Out)</h2>
-    <p class="note">Rutas orientativas para practicar; en Master Out el último dardo puede ser doble, triple o bull.</p>
-    <div id="checkoutTable" class="tableWrap"></div>
+    <input type="number" id="points" placeholder="Puntos restantes (ej. 68)" min="2" max="501">
+    <button id="calculateBtn">Calcular</button>
+    <div class="result" id="result"></div>
 </section>
 
 <section class="panel">
@@ -80,6 +68,17 @@
     <p class="note">Estas restas no permiten cierre en 3 dardos en la modalidad actual.</p>
     <div id="bogeyList" class="chips"></div>
 </section>
+
+<details class="panel collapsiblePanel">
+    <summary>Guia de entrenamiento</summary>
+    <div id="trainingGuide" class="guide"></div>
+</details>
+
+<details class="panel collapsiblePanel">
+    <summary>Cierres recomendados (Master Out)</summary>
+    <p class="note">Rutas orientativas para practicar; en Master Out el ultimo dardo puede ser doble, triple o bull. La diana cuenta como bull (50/50) y se prioriza por ser zona comoda.</p>
+    <div id="checkoutTable" class="tableWrap"></div>
+</details>
 
 <script src="./app.js"></script>
 

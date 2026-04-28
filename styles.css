@@ -55,6 +55,44 @@ button:hover {
     border-radius: 8px;
 }
 
+details.panel {
+    padding: 0;
+}
+
+details.panel > summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 14px 15px;
+    font-size: 1.05rem;
+    font-weight: bold;
+    color: #fff;
+    border-radius: 8px;
+    user-select: none;
+}
+
+details.panel > summary::-webkit-details-marker {
+    display: none;
+}
+
+details.panel > summary::after {
+    content: " ▾";
+    color: #888;
+    font-weight: normal;
+}
+
+details.panel[open] > summary::after {
+    content: " ▴";
+}
+
+details.panel > *:not(summary) {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+details.panel > *:last-child {
+    padding-bottom: 15px;
+}
+
 .trainerMain {
     border: 1px solid #3a3a3a;
 }
@@ -72,13 +110,25 @@ label {
 
 .guide {
     margin-top: 10px;
-    color: #e7e7e7;
+    color: #fff;
     line-height: 1.45;
+}
+
+details.panel .guide {
+    color: #fff;
+}
+
+details.panel .guide ul li {
+    color: #fff;
 }
 
 .note {
     margin: 0 0 12px;
     color: #bdbdbd;
+}
+
+details.panel > .note {
+    color: #fff;
 }
 
 .tableWrap table {
@@ -92,15 +142,16 @@ label {
     border-bottom: 1px solid #2f2f2f;
     padding: 8px 6px;
     text-align: left;
+    color: #fff;
 }
 
 .tableWrap th {
-    color: #ffb3b1;
+    color: #fff;
 }
 
 .bogeyRow td {
     background: #3a1f24;
-    color: #ffc9cf;
+    color: #fff;
 }
 
 .chips {
@@ -133,7 +184,7 @@ label {
 
 .levelInfo summary {
     cursor: pointer;
-    color: #ffd2d1;
+    color: #fff;
 }
 
 .levelInfo p {
