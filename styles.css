@@ -55,6 +55,10 @@ button:hover {
     border-radius: 8px;
 }
 
+.trainerMain {
+    border: 1px solid #3a3a3a;
+}
+
 h2 {
     margin: 0 0 10px;
     font-size: 1.1rem;
@@ -112,4 +116,35 @@ label {
     padding: 6px 10px;
     color: #ffd2d1;
     font-size: 0.9rem;
+}
+
+.coachStatus {
+    margin-top: 12px;
+    color: #d9d9d9;
+}
+
+.levelInfo {
+    margin-top: 10px;
+    background: #232323;
+    border: 1px solid #343434;
+    border-radius: 6px;
+    padding: 8px 10px;
+}
+
+.levelInfo summary {
+    cursor: pointer;
+    color: #ffd2d1;
+}
+
+.levelInfo p {
+    margin: 8px 0 0;
+    color: #e7e7e7;
+    line-height: 1.45;
+}
+
+.levelInfo .levelNote {
+    background: #2a2a2a;
+    border-left: 3px solid #ff9800;
+    padding: 6px 10px;
+    border-radius: 4px;
 }

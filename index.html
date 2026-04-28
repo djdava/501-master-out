@@ -8,21 +8,64 @@
 </head>
 <body>
 
-<h1>🎯 501 Master Out</h1>
+<h1>🎯 501 Master Out - 50/50</h1>
 
-<input type="number" id="points" placeholder="Puntos restantes (ej. 68)" min="2" max="501">
-<button id="calculateBtn">Calcular</button>
-
-<div class="result" id="result"></div>
-
-<section class="panel">
-    <h2>Guía de entrenamiento</h2>
+<section class="panel trainerMain">
+    <h2>Entrenador guiado</h2>
+    <p class="note">Te propone una resta, te dice donde tirar y por que. Luego le indicas en cuanto te quedaste y adapta el siguiente paso.</p>
     <label for="level">Nivel</label>
     <select id="level">
         <option value="principiante">Principiante</option>
         <option value="intermedio">Intermedio</option>
         <option value="avanzado">Avanzado</option>
     </select>
+    <details class="levelInfo">
+        <summary>Diferencia entre niveles</summary>
+        <p class="levelNote"><b>Nota comun:</b> el entrenador asume que la <b>diana (Bull, 50)</b> es zona comoda y mas facil que un T20. Por eso prioriza rutas con bull cuando son razonables.</p>
+
+        <p><b>Principiante (61-100):</b><br>
+        Objetivo: aprender a <b>dejar doble facil</b> (40, 32, 24, 16) y apoyarse en bull cuando ayuda.<br>
+        Evita forzar triples: si hay alternativa sin triple, el entrenador la elige.<br>
+        Ejemplo 60: <b>S20 → D20</b> (sin triples).<br>
+        Ejemplo 100: <b>Bull → Bull</b> (apoyado en diana, sin triple).</p>
+
+        <p><b>Intermedio (81-140):</b><br>
+        Acepta <b>1 triple</b> y combina rutas con bull para reducir riesgo.<br>
+        <b>Plan B:</b> si fallas el triple (ej. T20 cae single), el entrenador te recoloca con la nueva resta.<br>
+        Ejemplo 81: <b>T19 → D12</b> (1 triple + doble comodo).<br>
+        Ejemplo 110: <b>Bull → D5 → Bull</b> (apoyado en bull, sin triples).</p>
+
+        <p><b>Avanzado (121-170):</b><br>
+        <b>Eficiencia maxima</b>: prioriza cierres de 1 o 2 dardos y acepta varios triples.<br>
+        Tambien gestiona <b>bogeys</b> (restas sin cierre en 3 dardos: 159, 162, 163, 165, 166, 168, 169...).<br>
+        Ejemplo 132: <b>T20 → T20 → T4</b> (3 triples, ruta directa).<br>
+        Ejemplo 170: <b>T20 → T20 → Bull</b> (cierre maximo).</p>
+
+        <p><b>Resumen rapido:</b><br>
+        - Principiante = control y doble final, casi nada de triples.<br>
+        - Intermedio = 1 triple + bull, plan B mental.<br>
+        - Avanzado = eficiencia, triples y bogeys bajo presion.</p>
+    </details>
+    <button id="startCoachBtn">Empezar reto guiado</button>
+    <div id="coachStatus" class="coachStatus">Pulsa "Empezar reto guiado" para iniciar.</div>
+    <div id="coachInstruction" class="result"></div>
+
+    <label for="remainingAfterThrow">Me he quedado en...</label>
+    <input type="number" id="remainingAfterThrow" placeholder="Ej. 72" min="2" max="501">
+    <button id="updateCoachBtn">Actualizar entrenador</button>
+</section>
+
+<section class="panel">
+    <h2>Consulta rapida</h2>
+    <p class="note">Consulta puntual de cierre para una resta concreta.</p>
+<input type="number" id="points" placeholder="Puntos restantes (ej. 68)" min="2" max="501">
+<button id="calculateBtn">Calcular</button>
+
+<div class="result" id="result"></div>
+</section>
+
+<section class="panel">
+    <h2>Guia de entrenamiento</h2>
     <div id="trainingGuide" class="guide"></div>
 </section>
 
