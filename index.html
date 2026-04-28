@@ -15,6 +15,29 @@
 
 <div class="result" id="result"></div>
 
+<section class="panel">
+    <h2>Guía de entrenamiento</h2>
+    <label for="level">Nivel</label>
+    <select id="level">
+        <option value="principiante">Principiante</option>
+        <option value="intermedio">Intermedio</option>
+        <option value="avanzado">Avanzado</option>
+    </select>
+    <div id="trainingGuide" class="guide"></div>
+</section>
+
+<section class="panel">
+    <h2>Cierres recomendados (Master Out)</h2>
+    <p class="note">Rutas orientativas para practicar; en Master Out el último dardo puede ser doble, triple o bull.</p>
+    <div id="checkoutTable" class="tableWrap"></div>
+</section>
+
+<section class="panel">
+    <h2>Lista de bogeys</h2>
+    <p class="note">Estas restas no permiten cierre en 3 dardos en la modalidad actual.</p>
+    <div id="bogeyList" class="chips"></div>
+</section>
+
 <script src="./app.js"></script>
 
 </body>

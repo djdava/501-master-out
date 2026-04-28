@@ -12,7 +12,8 @@ h1 {
 }
 
 input,
-button {
+button,
+select {
     font-size: 1.2em;
     padding: 10px;
     margin-top: 10px;
@@ -45,4 +46,70 @@ button:hover {
 
 .bad {
     color: #ff9800;
+}
+
+.panel {
+    margin-top: 20px;
+    background: #1b1b1b;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+h2 {
+    margin: 0 0 10px;
+    font-size: 1.1rem;
+}
+
+label {
+    display: block;
+    margin-top: 4px;
+    color: #c8c8c8;
+}
+
+.guide {
+    margin-top: 10px;
+    color: #e7e7e7;
+    line-height: 1.45;
+}
+
+.note {
+    margin: 0 0 12px;
+    color: #bdbdbd;
+}
+
+.tableWrap table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+}
+
+.tableWrap th,
+.tableWrap td {
+    border-bottom: 1px solid #2f2f2f;
+    padding: 8px 6px;
+    text-align: left;
+}
+
+.tableWrap th {
+    color: #ffb3b1;
+}
+
+.bogeyRow td {
+    background: #3a1f24;
+    color: #ffc9cf;
+}
+
+.chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.chip {
+    background: #2c2c2c;
+    border: 1px solid #3a3a3a;
+    border-radius: 999px;
+    padding: 6px 10px;
+    color: #ffd2d1;
+    font-size: 0.9rem;
 }
